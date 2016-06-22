@@ -1,0 +1,33 @@
+package printer;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+@Path("/printer")
+public class PrinterService {
+	
+	@GET()
+	@Path("/list")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response getPrinterList(){
+		List<String> printers = new ArrayList<String>();
+		printers.add("P110/BNG");
+		printers.add("P112/BNG");
+		printers.add("P118/HYD");
+		printers.add("P119/HYD");
+		return Response.status(200).entity(printers.toString()).build();
+	}
+	
+	@POST()
+	@Path("/add")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response addPrinter(Printer printer){
+		return Response.status(200).entity("Added - "+printer.getId()).build();
+	}
+}

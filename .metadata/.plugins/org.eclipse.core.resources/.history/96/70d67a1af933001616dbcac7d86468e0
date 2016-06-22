@@ -1,0 +1,19 @@
+package printer;
+
+import javax.ws.rs.QueryParam;
+
+public class Printer {
+	@QueryParam("id")
+	private String id;
+	@QueryParam("location")
+	private String location;
+	
+	public String getId() {
+		return id;
+	}
+	public String getLocation() {
+		return location;
+	}
+	
+	
+}

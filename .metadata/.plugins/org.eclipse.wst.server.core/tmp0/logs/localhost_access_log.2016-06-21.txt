@@ -1,0 +1,17 @@
+127.0.0.1 - - [21/Jun/2016:13:04:03 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:13:05:18 +0530] "GET /RESTExamples/ HTTP/1.1" 200 57
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:13:05:18 +0530] "GET /favicon.ico HTTP/1.1" 404 973
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:13:05:30 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 500 -
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:13:05:57 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 500 -
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:13:07:38 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 148
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:13:09:01 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 212
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:13:10:09 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:52:56 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:52:57 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:52:58 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:52:58 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:52:58 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:52:59 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:53:00 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:53:00 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218
+0:0:0:0:0:0:0:1 - - [21/Jun/2016:17:53:00 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 218

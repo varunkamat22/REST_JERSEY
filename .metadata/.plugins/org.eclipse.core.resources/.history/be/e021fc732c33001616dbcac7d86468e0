@@ -1,0 +1,5 @@
+package service.greet;
+
+public class GreetService {
+
+}
