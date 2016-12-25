@@ -1,8 +1,0 @@
-package printer;
-
-import javax.ws.rs.Path;
-
-@Path("/printer")
-public class PrinterService {
-
-}

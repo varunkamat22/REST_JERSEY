@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import javax.activation.MimetypesFileTypeMap;
+import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -21,6 +23,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
+import javax.ws.rs.container.AsyncResponse;
+import javax.ws.rs.container.Suspended;
+import javax.ws.rs.container.TimeoutHandler;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.StreamingOutput;
@@ -34,6 +39,7 @@ public class PrinterService {
 	@GET()
 	@Path("/list")
 	@Produces(MediaType.APPLICATION_JSON)
+	@RolesAllowed("user")
 	public List<Printer> getPrinterList() {
 		List<Printer> printers = new ArrayList<Printer>();
 		printers.add(new Printer("P110", "BNG"));
@@ -78,13 +84,46 @@ public class PrinterService {
 	@GET()
 	@Path("/getfile/{file_id}")
 	@Produces("image/*")
-	public Response getFile(@PathParam("file_id") String file_id){
+	public Response getFile(@PathParam("file_id") String file_id) {
 		File f = new File("C:\\Users\\vakamat\\Documents\\pics_nice\\8.jpg");
 		if (!f.exists()) {
 			System.out.println("File does not exist");
 			throw new WebApplicationException(404);
 		}
 		String mt = new MimetypesFileTypeMap().getContentType(f);
-		return Response.ok(f, mt).header("content-disposition","attachment; filename = test_img.jpg").build();
+		return Response
+				.ok(f, mt)
+				.header("content-disposition",
+						"attachment; filename = test_img.jpg").build();
+	}
+
+	@GET()
+	@Path("/asynclist")
+	@Produces(MediaType.APPLICATION_JSON)
+	public void asyncGetPrinterList(@Suspended final AsyncResponse asyncResponse) {
+		asyncResponse.setTimeoutHandler(new TimeoutHandler() {
+			@Override
+			public void handleTimeout(AsyncResponse asyncResponse) {
+				asyncResponse.resume(Response
+						.status(Response.Status.SERVICE_UNAVAILABLE)
+						.entity("Operation time out.").build());
+			}
+		});
+		asyncResponse.setTimeout(5, TimeUnit.SECONDS);
+		new Thread(new Runnable() {
+			public void run() {
+				List<Printer> printers = new ArrayList<Printer>();
+				printers.add(new Printer("P110", "BNG"));
+				printers.add(new Printer("P112", "BNG"));
+				printers.add(new Printer("P118", "HYD"));
+				printers.add(new Printer("P119", "HYD"));
+				try {
+					Thread.sleep(5000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				asyncResponse.resume(Response.ok(printers).build());
+			}
+		}).start();
 	}
 }

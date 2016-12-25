@@ -1,0 +1,12 @@
+127.0.0.1 - - [25/Jun/2016:12:41:14 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:12:41:25 +0530] "GET /RESTExamples/rest/printer/getfile/asynclist HTTP/1.1" 200 37394
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:12:41:36 +0530] "GET /RESTExamples/rest/printer/asynclist HTTP/1.1" 500 3342
+127.0.0.1 - - [25/Jun/2016:16:31:52 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:16:36:39 +0530] "GET /RESTExamples/rest/printer/asynclist HTTP/1.1" 200 5
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:16:37:36 +0530] "GET /RESTExamples/rest/printer/asynclist HTTP/1.1" 200 125
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:16:45:24 +0530] "GET /RESTExamples/rest/printer/asynclist HTTP/1.1" 200 125
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:16:46:07 +0530] "GET /RESTExamples/rest/printer/asynclist HTTP/1.1" 503 19
+127.0.0.1 - - [25/Jun/2016:20:49:47 +0530] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:20:50:11 +0530] "GET /RESTExamples/rest/printer/asynclist HTTP/1.1" 503 19
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:20:50:20 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 125
+0:0:0:0:0:0:0:1 - - [25/Jun/2016:20:50:29 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 125

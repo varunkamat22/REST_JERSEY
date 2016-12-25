@@ -1,0 +1,40 @@
+package addressscrub;
+
+import java.util.List;
+
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
+
+import org.glassfish.jersey.client.ClientConfig;
+
+import printer.Printer;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+
+public class AddressScrubClient {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		ClientConfig config = new ClientConfig();
+	    Client client = ClientBuilder.newClient(config);
+	    
+	    WebTarget wt = client.target("https://us-autocomplete.api.smartystreets.com").path("suggest");
+	    wt = wt.queryParam("auth-id", "2b6d676b-ffdb-006b-7608-03d245df2cf3");
+	    wt.queryParam("auth-token", "ywf7wUG6HQJupD3JfZ7y");
+	    wt.queryParam("prefix", "1600 Amphitheatre");
+	    wt.queryParam("city_filter", "Mountain View");
+	    wt.queryParam("state_filter", "CA");
+	    wt.queryParam("geolocate", "false");
+	    System.out.println(wt);
+	    //String data = wt.request().accept(MediaType.APPLICATION_JSON).get(String.class);
+	    //ObjectMapper om = new ObjectMapper();
+	    //List<Printer> printers = om.readValue(data , TypeFactory.defaultInstance().constructCollectionType(List.class, Printer.class));
+	   // System.out.println(data);
+	}
+
+}

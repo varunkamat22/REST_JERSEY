@@ -1,0 +1,7 @@
+0:0:0:0:0:0:0:1 - - [29/Jun/2016:15:59:33 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 125
+0:0:0:0:0:0:0:1 - - [29/Jun/2016:15:59:47 +0530] "PUT /RESTExamples/rest/printer/list HTTP/1.1" 405 1013
+0:0:0:0:0:0:0:1 - - [29/Jun/2016:15:59:52 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 125
+0:0:0:0:0:0:0:1 - - [29/Jun/2016:15:59:58 +0530] "HEAD /RESTExamples/rest/printer/list HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [29/Jun/2016:16:00:38 +0530] "DELETE /RESTExamples/rest/printer/list HTTP/1.1" 405 1013
+0:0:0:0:0:0:0:1 - - [29/Jun/2016:16:00:45 +0530] "OPTIONS /RESTExamples/rest/printer/list HTTP/1.1" 200 760
+0:0:0:0:0:0:0:1 - - [29/Jun/2016:16:01:12 +0530] "GET /RESTExamples/rest/printer/list HTTP/1.1" 200 125
